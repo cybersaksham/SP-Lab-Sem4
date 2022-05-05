@@ -1,0 +1,31 @@
+#!/bin/bash
+re='^[0-9]+$'
+if [ "$#" -eq 0 ]; then
+    echo "Start line number expected"
+    exit 0
+elif [ "$#" -eq 1 ]; then
+    echo "Number of lines expected"
+    exit 0
+elif [ "$#" -eq 2 ]; then
+    echo "Filename expected"
+    exit 0
+elif [ "$#" -gt 3 ]; then
+    echo "Unexpected argument: $4"
+    exit 0
+elif ! [[ $1 =~ $re ]]; then
+    echo "Integer expected at argument 1"
+    exit 0
+elif ! [[ $2 =~ $re ]]; then
+    echo "Integer expected at argument 2"
+    exit 0
+fi
+
+if [ -f "$3" ]
+then
+   endl=$(($1 + $2 - 1))
+   sed -n $1,$endl\p $3
+else
+   echo "File $3 not found"
+   exit 0
+fi
+

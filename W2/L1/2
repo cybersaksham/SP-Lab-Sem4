@@ -1,0 +1,13 @@
+echo "Enter number: "
+read n
+rev=0
+t=0
+while [ $n -gt 0 ]
+do
+	rev=$(expr  $rev \* 10)
+	t=$(expr  $n % 10)
+	rev=$( expr  $rev + $t )
+	n=$(expr $n / 10)
+done
+echo "Reverse is $rev"
+	

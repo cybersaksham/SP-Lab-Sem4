@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ "$#" -eq 0 ]; then
+    echo "Filename not provided"
+    exit 0
+elif [ "$#" -gt 1 ]; then
+    echo "Unexpected argument: $2"
+    exit 0
+fi
+
+if [ -f "$1" ]
+then
+   echo "File $1 found"
+else
+   echo "File $1 not found"
+fi

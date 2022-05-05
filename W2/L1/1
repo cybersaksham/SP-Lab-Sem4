@@ -1,0 +1,8 @@
+#!/bin/sh
+dates=$(date +"%d-%m-%y")
+times=$(date +"%H:%M:%S")
+echo "Date: $dates"
+echo "Time: $times"
+echo "Username: $USER"
+echo "Directory: $(pwd)"
+
