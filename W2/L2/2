@@ -1,0 +1,32 @@
+#!/bin/bash
+da=0
+hra=0
+ta=0
+
+if [ "$#" -eq 0 ]; then
+    echo "Basic salary not given"
+    exit 0
+elif [ "$#" -eq 2 ]; then
+    da=$2
+elif [ "$#" -eq 3 ]; then
+    da=$2
+    hra=$3
+elif [ "$#" -eq 4 ]; then
+    da=$2
+    hra=$3
+    ta=$4
+elif [ "$#" -gt 4 ]; then
+    echo "Unexpected argument: $5"
+    exit 0
+fi
+
+fin_da=$(expr $1 \* $da / 100 )
+fin_hra=$(expr $1 \* $hra / 100 )
+fin_ta=$(expr $1 \* $ta / 100 )
+gross=$( expr $1 + $fin_da + $fin_hra + $fin_ta )
+
+echo "Basic Salary: $1"
+echo "DA: $fin_da"
+echo "HRA: $fin_hra"
+echo "TA: $fin_ta"
+echo "Gross Salary: $gross"

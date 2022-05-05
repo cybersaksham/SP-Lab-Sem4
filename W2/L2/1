@@ -1,0 +1,12 @@
+#!/bin/bash
+c=$( expr $1 + $2 )
+d=$( expr $1 - $2 )
+e=$( expr $1 \* $2 )
+f=$( expr $1 / $2 )
+g=$( expr $1 % $2 )
+
+echo "Sum: $c"
+echo "Subtraction: $d"
+echo "Multiplication: $e"
+echo "Division: $f"
+echo "Modulo: $g"
